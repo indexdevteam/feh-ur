@@ -3,7 +3,7 @@
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=feh
-pkgver=1.3.5
+pkgver=1.3.5.040310
 pkgrel=1
 pkgdesc="A fast, lightweight image viewer which uses imlib2"
 arch=('i686' 'x86_64')
@@ -11,8 +11,8 @@ url="https://derf.homelinux.org/~derf/projects/feh/"
 license=('MIT')
 depends=('libpng' 'libxinerama' 'giblib')
 makedepends=('libxt')
-source=("https://derf.homelinux.org/~derf/projects/${pkgname}/${pkgname}-${pkgver}.tar.bz2")
-md5sums=('4f4af3138d635e3dc4553ff4ca550891')
+source=("http://ftp.archlinux.org/other/${pkgname}/${pkgname}-${pkgver}.tar.bz2")
+md5sums=('5ff7146f509c106146c02bbaf50a21fc')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
