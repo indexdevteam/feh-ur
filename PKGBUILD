@@ -5,7 +5,7 @@
 
 pkgname=feh
 pkgver=1.11
-pkgrel=1
+pkgrel=2
 pkgdesc='Fast, lightweight image viewer which uses imlib2'
 arch=('i686' 'x86_64')
 url='http://derf.homelinux.org/projects/feh/'
@@ -17,7 +17,7 @@ sha1sums=('cc4209aa197938389b3d6628e75404eff52475cc')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
-  make
+  make PREFIX=/usr
 }
 
 package(){
