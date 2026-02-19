@@ -5,6 +5,7 @@ pkgbase = feh
 	url = https://feh.finalrewind.org/
 	arch = x86_64
 	license = MIT
+	makedepends = git
 	makedepends = libxt
 	depends = curl
 	depends = file
@@ -13,11 +14,10 @@ pkgbase = feh
 	depends = libexif
 	depends = libxinerama
 	optdepends = imagemagick: support more file formats
-	source = https://feh.finalrewind.org/feh-3.11.3.tar.bz2
-	source = https://feh.finalrewind.org/feh-3.11.3.tar.bz2.asc
+	source = git+https://git.finalrewind.org/feh.git#tag=3.11.3?signed
+	validpgpkeys = 429AF7B8E9EC9C0709D32F7F5333FB7712E24FE8
 	validpgpkeys = 781BB7071C6BF648EAEB08A1100D5BFB5166E005
 	validpgpkeys = 64FE6EC055560F9EF13A304419E6E524EBB177BA
-	sha256sums = f2cca3592a433922c0db7a9365fd63e5402c121d932a9327e279c71be6501063
-	sha256sums = SKIP
+	sha256sums = 73023aff2f31256729f0f79110d3b634884b4a86999842b56945308963b3faf0
 
 pkgname = feh

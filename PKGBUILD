@@ -14,15 +14,15 @@ license=('MIT')
 arch=('x86_64')
 depends=('curl' 'file' 'hicolor-icon-theme' 'imlib2' 'libexif' 'libxinerama')
 optdepends=('imagemagick: support more file formats')
-makedepends=('libxt')
-validpgpkeys=('781BB7071C6BF648EAEB08A1100D5BFB5166E005'  # Daniel Friesel <derf@finalrewind.org> 
+makedepends=('git' 'libxt')
+validpgpkeys=('429AF7B8E9EC9C0709D32F7F5333FB7712E24FE8'  # Birte Kristina Friesel <birte.friesel@uni-osnabrueck.de>
+              '781BB7071C6BF648EAEB08A1100D5BFB5166E005'  # Daniel Friesel <derf@finalrewind.org> 
               '64FE6EC055560F9EF13A304419E6E524EBB177BA') # Derf Null <derf@ccc.de>
-source=("${url}${pkgname}-${pkgver}.tar.bz2"{,.asc})
-sha256sums=('f2cca3592a433922c0db7a9365fd63e5402c121d932a9327e279c71be6501063'
-            'SKIP')
+source=("git+https://git.finalrewind.org/feh.git#tag=${pkgver}?signed")
+sha256sums=('73023aff2f31256729f0f79110d3b634884b4a86999842b56945308963b3faf0')
 
 build() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
+	cd "${srcdir}/${pkgname}"
 	make PREFIX=/usr \
 		exif=1 \
 		help=1 \
@@ -32,7 +32,7 @@ build() {
 }
 
 package() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
+	cd "${srcdir}/${pkgname}"
 	make PREFIX=/usr DESTDIR="${pkgdir}" install
 	install -D -m0644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
