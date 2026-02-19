@@ -12,7 +12,16 @@ pkgdesc='Fast and light imlib2-based image viewer'
 url='https://feh.finalrewind.org/'
 license=('MIT')
 arch=('x86_64')
-depends=('curl' 'file' 'hicolor-icon-theme' 'imlib2' 'libexif' 'libxinerama')
+depends=('curl' 'libcurl.so'
+         'file' 'libmagic.so'
+         'glibc'
+         'hicolor-icon-theme'
+         'imlib2' #'libImlib2.so'
+         'libexif' 'libexif.so'
+         'libpng' 'libpng16.so'
+         'libx11' #'libX11.so'
+         'libxinerama' #'libXinerama.so'
+)
 optdepends=('imagemagick: support more file formats')
 makedepends=('git' 'libxt')
 validpgpkeys=('429AF7B8E9EC9C0709D32F7F5333FB7712E24FE8'  # Birte Kristina Friesel <birte.friesel@uni-osnabrueck.de>

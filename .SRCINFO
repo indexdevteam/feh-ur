@@ -8,10 +8,17 @@ pkgbase = feh
 	makedepends = git
 	makedepends = libxt
 	depends = curl
+	depends = libcurl.so
 	depends = file
+	depends = libmagic.so
+	depends = glibc
 	depends = hicolor-icon-theme
 	depends = imlib2
 	depends = libexif
+	depends = libexif.so
+	depends = libpng
+	depends = libpng16.so
+	depends = libx11
 	depends = libxinerama
 	optdepends = imagemagick: support more file formats
 	source = git+https://git.finalrewind.org/feh.git#tag=3.11.3?signed
